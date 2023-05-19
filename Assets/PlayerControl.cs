@@ -14,7 +14,7 @@ public class PlayerControl : MonoBehaviour
 
     public void GroundMovement()
     {
-        xVelocity = Input.GetAxisRaw("Horizontal"); //Ê¹ÓÃGetAxisRawÊµÏÖ¾«È·¿ØÖÆ£¬GetAxis»á³öÏÖ½ÇÉ«ÎÞ·¨Á¢¿ÌÍ£Ö¹µÄÎÊÌâ
+        xVelocity = Input.GetAxisRaw("Horizontal"); //Ê¹ï¿½ï¿½GetAxisRawÊµï¿½Ö¾ï¿½È·ï¿½ï¿½ï¿½Æ£ï¿½GetAxisï¿½ï¿½ï¿½ï¿½Ö½ï¿½É«ï¿½Þ·ï¿½ï¿½ï¿½ï¿½ï¿½Í£Ö¹ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
         rb.velocity = new Vector2(xVelocity * speed, rb.velocity.y);
         if (Input.GetButtonDown("Horizontal"))
         {
@@ -47,7 +47,7 @@ public class PlayerControl : MonoBehaviour
     public float rayPozitionY = -0.5f;
     public LayerMask groundLayer;
 
-   //¶Ô½ÇÉ«µÄ×ÝÏòÒÆ¶¯½øÐÐÎïÀíÅÐ¶Ï
+   //ï¿½Ô½ï¿½É«ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ¶ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
     RaycastHit2D Raycast(Vector2 offset, Vector2 rayDirection, float length, LayerMask layer)
     {
         Vector2 pos = transform.position;
@@ -110,18 +110,19 @@ public class PlayerControl : MonoBehaviour
         // Update is called once per frame
         void Update()
         {
-          pressJump = Input.GetButton("Jump");
+        pressJump = Input.GetButton("Jump");
         Jump();
-        }
+    }
 
         void FixedUpdate()
         {
         PhysicsCheck();
         GroundMovement();
+        
         /*Vector2 velocity = rb.velocity;
         velocity.x = speed;
         rb.velocity = velocity;*/
-        }
+    }
 
     }
 
